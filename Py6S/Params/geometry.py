@@ -74,7 +74,7 @@ class Geometry:
                     pysolar_getaltitude = pysolar.get_altitude
                     pysolar_getazimuth = pysolar.get_azimuth
                 except:
-                    raise ImportError("To set the geometry from a time and location you must have the PySolar module installed.\nPy6S requires Pysolar v0.6.\nTo install this, run 'pip install pysolar==0.6' at the command line.")
+                    raise ImportError("To set the geometry from a time and location you must have the PySolar module installed.\nPy6S requires Pysolar >= v0.6.\nTo install this, run 'pip install pysolar>=0.6' at the command line.")
 
             dt = dateutil.parser.parse(datetimestring, dayfirst=True)
             self.solar_z = 90.0 - pysolar_getaltitude(lat, lon, dt)
